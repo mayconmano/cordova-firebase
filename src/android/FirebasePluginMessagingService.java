@@ -75,7 +75,7 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
             boolean showNotification = (FirebasePlugin.inBackground() || !FirebasePlugin.hasNotificationsCallback()) && (!TextUtils.isEmpty(text) || !TextUtils.isEmpty(title));
             sendNotification(id, title, text, remoteMessage.getData(), showNotification);
             // Convert bage data to integer
-            int badgeNumberInt = Integer.parseInt(badgeNumberStr);
+            int badgeNumberInt = Integer.parseInt(badgeStr);
             // Using shortcut badger update badge on app icon
             ShortcutBadger.applyCount(getApplicationContext(), badgeNumberInt); 
         }
